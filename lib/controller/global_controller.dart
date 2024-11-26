@@ -1,5 +1,7 @@
+import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:weather_app/utils.dart';
 
 class GlobalController extends GetxController {
   // create variour variables
@@ -27,18 +29,18 @@ class GlobalController extends GetxController {
 
     // return if service is not enable
     if (!isServiceEnable) {
-      return Future.error('Location Not Enabled');
+      return Get.snackbar("Error", 'Please Enable Location');
     }
 
     // status of permission request
     LocationPermission locationPermission = await Geolocator.checkPermission();
     if (locationPermission == LocationPermission.deniedForever) {
-      return Future.error('Location Permission Denied Forever');
+      return Get.snackbar("Error", 'Location Permission Denied Forever');
     } else if (locationPermission == LocationPermission.denied) {
       // if only denied then again request permission
       locationPermission = await Geolocator.requestPermission();
       if (locationPermission == LocationPermission.denied) {
-        return Future.error('Location Permission is Denied');
+        return Get.snackbar("Error", 'Location Permission is Denied');
       }
     }
 
