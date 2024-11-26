@@ -24,3 +24,5 @@ class MyApp extends StatelessWidget {
   }
 }
 // 7423c21367ce1c532ef3cba4ea0e6840
+// our full url = https://api.openweathermap.org/data/2.5/weather?q=London&appid=7423c21367ce1c532ef3cba4ea0e6840
+// https://api.openweathermap.org/data/2.5/weather?lat=34.0959&appid=7423c21367ce1c532ef3cba4ea0e6840&lon=71.1509

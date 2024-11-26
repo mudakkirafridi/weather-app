@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:weather_app/controller/global_controller.dart';
+import 'package:weather_app/widgets/current_weather_widget.dart';
 import 'package:weather_app/widgets/header_widget.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -12,8 +13,9 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   // call state management
-  final GlobalController globalController =
-      Get.put(GlobalController(), permanent: true);
+  final GlobalController globalController = Get.put(
+    GlobalController(),
+  );
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +28,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 )
               : ListView(
                   scrollDirection: Axis.vertical,
-                  children: [HeaderWidget()],
+                  children: [
+                    HeaderWidget(),
+                    CurrentWeatherWidget(
+                        currentWeather: globalController.currentWeather),
+                  ],
                 ))),
     );
   }

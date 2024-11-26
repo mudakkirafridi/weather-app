@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geocoding/geocoding.dart';
 import 'package:get/get.dart';
+import 'package:intl/intl.dart';
 import 'package:weather_app/controller/global_controller.dart';
 
 class HeaderWidget extends StatefulWidget {
@@ -14,6 +15,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
   final GlobalController globalController =
       Get.put(GlobalController(), permanent: true);
   String city = '';
+  String dateTime = DateFormat('yMMMMd').format(DateTime.now());
 
   @override
   void initState() {
@@ -38,7 +40,21 @@ class _HeaderWidgetState extends State<HeaderWidget> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          child: Text(city),
+          margin: const EdgeInsets.symmetric(horizontal: 20),
+          alignment: Alignment.topLeft,
+          child: Text(
+            city,
+            style: const TextStyle(fontSize: 35),
+          ),
+        ),
+        Container(
+          margin: const EdgeInsets.only(left: 20, right: 20, bottom: 20),
+          alignment: Alignment.topLeft,
+          child: Text(
+            dateTime,
+            style:
+                TextStyle(fontSize: 14, color: Colors.grey[700], height: 1.5),
+          ),
         )
       ],
     );

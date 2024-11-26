@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:weather_app/api/fetch_weather.dart';
+import 'package:weather_app/model/current_weather.dart';
 import 'package:weather_app/utils.dart';
 
 class GlobalController extends GetxController {
@@ -8,6 +10,7 @@ class GlobalController extends GetxController {
   final RxBool _isLoading = true.obs;
   final RxDouble _latitude = 0.0.obs;
   final RxDouble _longitude = 0.0.obs;
+  late CurrentWeather currentWeather;
 
   // instances for them to be called
   RxBool checkLoading() => _isLoading;
@@ -51,7 +54,13 @@ class GlobalController extends GetxController {
       // update our longitude and latitude i mean our variables
       _latitude.value = value.latitude;
       _longitude.value = value.longitude;
-      _isLoading.value = false;
+      print(value.longitude);
+      return FetchWeatherApi()
+          .currentWeather(value.latitude, value.longitude)
+          .then((value) {
+        currentWeather = value;
+        _isLoading.value = false;
+      });
     });
   }
 }
