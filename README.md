@@ -1,11 +1,12 @@
 # weather_app
 
 A new Flutter project.
-<img src="https://github.com/user-attachments/assets/03748e42-0526-4a4a-804e-a24790fb288b" alt="Screenshot_20241127-215121" style="width:400px;">
+<img src="https://github.com/user-attachments/assets/03748e42-0526-4a4a-804e-a24790fb288b" alt="Screenshot_20241127-215121" style="width:300px;">
+<img src="https://github.com/user-attachments/assets/c085a1ba-6c08-4b7a-b736-69fc3cc059d8" alt="Screenshot_20241127-215132" style="width:300px;">
 
 
 
-![Screenshot_20241127-215132](https://github.com/user-attachments/assets/c085a1ba-6c08-4b7a-b736-69fc3cc059d8)
+
 
 ## Getting Started
 
