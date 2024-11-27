@@ -3,7 +3,6 @@ import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:weather_app/api/fetch_weather.dart';
 import 'package:weather_app/model/current_weather.dart';
-import 'package:weather_app/utils.dart';
 
 class GlobalController extends GetxController {
   // create variour variables
